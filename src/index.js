@@ -1,12 +1,12 @@
-window.Lightbox = require('lightbox2');
+import Lightbox from 'lightbox2';
 
 $(document).on("DOMContentLoaded.lightbox", function () {
 
     var original = {};
-    
+
     function args(_arguments) { return Array.prototype.slice.apply(_arguments); }
-    Lightbox.trigger = function() { $(original).trigger.apply($(Lightbox.lightbox), args(arguments)); };
-    Lightbox.on = function() { $(original).on.apply($(Lightbox.lightbox), args(arguments)); };
+    Lightbox.trigger = function() { $(original).trigger.apply($(lightbox.lightbox), args(arguments)); };
+    Lightbox.on = function() { $(original).on.apply($(lightbox.lightbox), args(arguments)); };
 
     original['init'] = Lightbox.init;
     Lightbox.init = function() {
@@ -79,7 +79,7 @@ $(document).on("DOMContentLoaded.lightbox", function () {
 
 $(window).on("load.ligthbox", function () {
 
-    if (Lightbox.$container) {
+    if (lightbox.$container) {
         Lightbox.$container.on('onStart', (event, result, self) => $('html,body').css('overflow', 'hidden'));
         Lightbox.$container.on('onEnd'  , (event, result, self) => $('html,body').css('overflow', ''));
     }
