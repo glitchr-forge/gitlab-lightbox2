@@ -1,6 +1,6 @@
 {
   "name": "@glitchr/lightbox2",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "Lightbox event extension",
   "main": "src/index.js",
   "repository": {
