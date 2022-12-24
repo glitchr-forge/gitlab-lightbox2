@@ -3,7 +3,7 @@ window.Lightbox = require('lightbox2');
 $(document).on("DOMContentLoaded.lightbox", function () {
 
     var original = {};
-    
+
     function args(_arguments) { return Array.prototype.slice.apply(_arguments); }
     Lightbox.trigger = function() { $(original).trigger.apply($(Lightbox.lightbox), args(arguments)); };
     Lightbox.on = function() { $(original).on.apply($(Lightbox.lightbox), args(arguments)); };
@@ -18,7 +18,7 @@ $(document).on("DOMContentLoaded.lightbox", function () {
 
         Lightbox.$container.trigger('onInit', _args);
     };
-    
+
     original['start'] = Lightbox.start;
     Lightbox.start = function() {
 
@@ -79,7 +79,14 @@ $(document).on("DOMContentLoaded.lightbox", function () {
 
 $(window).on("load.ligthbox", function () {
 
-    if (Lightbox.$container) {
+    // Lighthouse - SEO requires "href" attribute (TBC)
+    $(".lb-cancel").attr("href", "#cancel");
+    $(".lb-close").attr("href", "#close");
+    $(".lb-prev").attr("href", "#prev");
+    $(".lb-next").attr("href", "#next");
+
+    var lightgallery = $("[data-lightbox]");
+    if (Lightbox.$container && lightgallery.length > 0) {
         Lightbox.$container.on('onStart', (event, result, self) => $('html,body').css('overflow', 'hidden'));
         Lightbox.$container.on('onEnd'  , (event, result, self) => $('html,body').css('overflow', ''));
     }
