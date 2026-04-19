@@ -1,3 +1,4 @@
+import $ from 'jquery';
 window.Lightbox = require('lightbox2');
 
 $(document).on("DOMContentLoaded.lightbox", function () {
