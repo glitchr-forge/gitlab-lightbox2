@@ -4,8 +4,8 @@
   "description": "Lightbox event extension",
   "main": "src/index.js",
   "repository": {
-    "url": "ssh://git@gitlab.glitchr.dev:public-repository/javascript/lightbox2.git",
-    "type": "git"
+    "type": "git",
+    "url": "git+https://github.com/glitchr-studio/lightbox2.git"
   },
   "dependencies": {
     "lightbox2": "^2.11.3"
